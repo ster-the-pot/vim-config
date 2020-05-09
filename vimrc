@@ -5,7 +5,7 @@ set cursorline 			" highlight current line
 set wildmenu 			" visual autocomplete for command menu
 set showmatch 			" highlight matching [{()}] highlights matching bracket
 set hlsearch			" highlights search results
-
+set ruler               " shows line number and column number
 
 " vim plug
 call plug#begin('~/.vim/plugged')
@@ -32,5 +32,23 @@ else
     Plug 'roxma/vim-hug-neovim-rpc'
 endif
 let g:deoplete#enable_at_startup = 1
+
+"syntax checking
+Plug 'dense-analysis/ale'
+
+let g:ale_linters = {
+						\   'javascript': ['eslint'],
+						\   'typescript': ['tsserver', 'tslint'],
+						\   'vue': ['eslint']
+						\}
+let g:ale_fixers = {
+						\    'javascript': ['eslint'],
+						\    'typescript': ['prettier'],
+						\    'vue': ['eslint'],
+						\    'scss': ['prettier'],
+						\    'html': ['prettier']
+						\}
+let g:ale_fix_on_save = 1
+
 "end plugin section
 call plug#end()
