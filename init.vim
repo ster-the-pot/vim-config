@@ -29,8 +29,13 @@ let g:coc_global_extensions = [
   \ 'coc-json', 
   \ ]
 
+"nerd tree setup
+Plug 'preservim/nerdtree'
+nmap <C-h> <C-w>h
+nmap<C-l> <C-w>l
 
-
+nmap <C-f> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif "if nerdTree is the last window, it auto closes"
 
 "intellisense with cocVIM
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
