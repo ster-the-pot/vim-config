@@ -47,6 +47,10 @@ if !exists('g:vscode')
 
 		nnoremap ,c :call NERDComment(0,"toggle")<CR>
 		vnoremap ,c :call NERDComment(0,"toggle")<CR>
+		"NerdTree git plugin (for git highlighting)"
+
+		Plug 'Xuyuanp/nerdtree-git-plugin'
+		
 		"Vim Airline Setup
 		Plug 'vim-airline/vim-airline'
 		let g:airline_theme = 'codedark'
@@ -107,12 +111,12 @@ if !exists('g:vscode')
 		nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 		"end plugin section
-		call plug#end()
 
 
 		"NerdTree fonts and icons
 		Plug 'ryanoasis/vim-devicons'
-		set encoding=utf-8
+
+		call plug#end()
 else
 		"vs-code vim settings"
 endif
