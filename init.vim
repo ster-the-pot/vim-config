@@ -53,7 +53,6 @@ if !exists('g:vscode')
 		
 		"Vim Airline Setup
 		Plug 'vim-airline/vim-airline'
-		let g:airline_theme = 'codedark'
 		
 
 		"intellisense with cocVIM
