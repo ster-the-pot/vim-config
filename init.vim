@@ -38,11 +38,19 @@ if !exists('g:vscode')
 
 		nmap <C-f> :NERDTreeToggle<CR>
 		autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif "if nerdTree is the last window, it auto closes"
+		
+		"Nerd Commenter Setup"
+		Plug 'preservim/nerdcommenter'
+		"space after comments and compact multi-line"
+		let g:NERDSpaceDelims = 1
+		" let g:NERDCompactSexyComs = 1
 
+		nnoremap ,c :call NERDComment(0,"toggle")<CR>
+		vnoremap ,c :call NERDComment(0,"toggle")<CR>
 		"Vim Airline Setup
 		Plug 'vim-airline/vim-airline'
 		let g:airline_theme = 'codedark'
-
+		
 
 		"intellisense with cocVIM
 		Plug 'neoclide/coc.nvim', {'branch': 'release'}
