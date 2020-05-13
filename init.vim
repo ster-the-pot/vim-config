@@ -8,7 +8,7 @@ set hlsearch			" highlights search results
 set ruler               " shows line number and column number
 
 " vim plug
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 "plugin section
 
@@ -16,6 +16,21 @@ call plug#begin('~/.vim/plugged')
 Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+" prettier on save
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+" including coc pluggins
+let g:coc_global_extensions = [
+  \ 'coc-snippets',
+  \ 'coc-pairs',
+  \ 'coc-tsserver',
+  \ 'coc-eslint', 
+  \ 'coc-prettier', 
+  \ 'coc-json', 
+  \ ]
+
+
+
 
 "intellisense with cocVIM
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
